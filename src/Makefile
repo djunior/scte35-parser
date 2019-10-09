@@ -1,4 +1,4 @@
-TARGET = scte35_parser.exe
+TARGET = scte35_parser
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall -I.
