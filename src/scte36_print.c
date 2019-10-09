@@ -48,6 +48,9 @@ void print_with_indent(FILE *output, int indent)
   print_with_indent(gb_output, lvl);    \
   fprintf(gb_output, frmt, ##__VA_ARGS__)
 
+extern void splice_null_printer(splice_insert_t *ptr) {
+
+}
 
 extern void splice_insert_printer(splice_insert_t *ptr) {
   indent_print(LVL_1, "splice_insert() {");

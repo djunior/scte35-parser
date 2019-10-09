@@ -4,6 +4,7 @@
 #include <math.h>
 #include "scte35_types.h"
 
+extern void splice_null_printer(splice_insert_t *ptr);
 extern void splice_insert_printer(splice_insert_t *ptr);
 extern void splice_time_printer(splice_time_t *ptr);
 
@@ -150,6 +151,12 @@ int ParseSCTE35FromByteArray(
 
     switch (section->splice_command_type)
     {
+    case 0: // splice_null();
+    {
+      section->splice_command_printer = (void (*)(void *))splice_null_printer;
+      parseDone = 1;
+    }
+    break;
     case 5: // splice_insert();
     {
       section->splice_command_ptr = (splice_insert_t *)calloc(sizeof(splice_insert_t), sizeof(char));
