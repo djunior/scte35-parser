@@ -1,5 +1,4 @@
 # scte35-parser
----
 
 ### SCTE 35 Parser in C Digital Program Insertion Cueing Message for Cable.
 
